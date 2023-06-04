@@ -1,0 +1,20 @@
+<div>
+<h1>Inserisci una Task</h1>
+<div id="form-task">
+<form [formGroup]="taskForm">
+  <label>Task</label>
+<input type="text" formControlName="task">
+</form>
+</div>
+<div id="bottone">
+<button (click)="onAddTask()">Invia</button>
+<div *ngFor="let item of list">
+  <div *ngIf="item.completed == false">
+<p>{{item.tittle}}</p>
+  <button (click)="onCompletedTask(item)">✅</button>
+  </div>
+</div>
+</div>
+
+</div>
+
