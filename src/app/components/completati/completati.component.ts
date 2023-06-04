@@ -8,10 +8,13 @@ import { TodosService } from 'src/app/service/todos.service';
   styleUrls: ['./completati.component.scss']
 })
 export class CompletatiComponent implements OnInit {
-
-  constructor() { }
+  list : Todo [] = []
+  constructor(
+  private toDoService : TodosService
+  ) {}
 
   ngOnInit(): void {
+    this.list = this.toDoService.toDoList
   }
 
 }
